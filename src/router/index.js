@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import About from "../views/About.vue";
+import LightList from "../views/LightList.vue";
+import LightControl from "../views/LightControl.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 
@@ -13,6 +16,21 @@ const routes = [
     component: Home
   },
   {
+    path: "/about",
+    name: "about",
+    component: About
+  },
+  {
+    path: "/lights",
+    name: "lights",
+    component: LightList
+  },
+  {
+    path: "/light",
+    name: "light",
+    component: LightControl
+  },
+  {
     path: "/login",
     name: "login",
     component: Login
@@ -23,9 +41,9 @@ const routes = [
     component: Register
   },
   {
-    path:"*",
-    redirect: '/'
-  },
+    path: "*",
+    redirect: "/"
+  }
   // {
   //   path: "/about",
   //   name: "about",

@@ -7,10 +7,11 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faSignInAlt,
   faSignOutAlt,
-  faEdit
+  faEdit,
+  faInfoCircle
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSignInAlt, faSignOutAlt, faEdit);
+library.add(faSignInAlt, faSignOutAlt, faEdit, faInfoCircle);
 
 Vue.config.productionTip = false;
 

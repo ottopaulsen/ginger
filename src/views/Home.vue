@@ -2,15 +2,14 @@
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col-10 col-md-10 col-lg-8 col-xl-7">
-        <h4 class="display-4 text-primary mt-3 mb-2">Ginger</h4>
+        <h1 class="display-4 text-primary mt-3 mb-2">Home</h1>
         <div v-if="user">
           <span>
             <p class="text-secondary">User: {{ user.name || user.email }}</p>
           </span>
         </div>
         <p class="lead">
-          The Gingerbread house light is perfect for lighting up inside a
-          gingerbread house. Use this app to control the lights.
+          Hmmm...
         </p>
         <router-link
           v-if="!user"
@@ -47,3 +46,9 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+h1 {
+  font-size: 2em;
+  color: blue;
+}
+</style>

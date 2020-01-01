@@ -5,21 +5,27 @@
       <router-link to="/about">About</router-link>
     </div> -->
     <Navigation :user="user" @log-out="logout" />
-    <router-view class="container" :user="user" @log-out="logout" />
+    <router-view
+      class="container"
+      :user="user"
+      :lights="lights"
+      @log-out="logout"
+    />
   </div>
 </template>
 
 <script>
 import Navigation from "@/components/Navigation.vue";
 import Firebase from "./fb";
-// import db from "./db.js";
+import { firestore } from "./fb";
 
 export default {
   name: "app",
   data: function() {
     return {
       name: null,
-      user: null
+      user: null,
+      lights: []
     };
   },
   methods: {
@@ -36,6 +42,14 @@ export default {
     Firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.user = user;
+        firestore.collection("lights").onSnapshot(snapshot => {
+          snapshot.forEach(doc => {
+            this.lights.push({
+              id: doc.id,
+              name: doc.data().name
+            });
+          });
+        });
       }
     });
     // db.collection("users")

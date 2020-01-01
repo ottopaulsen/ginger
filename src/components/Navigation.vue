@@ -10,6 +10,12 @@
           <router-link v-if="!user" class="navbar-item nav-link" to="register"
             >Register</router-link
           >
+          <router-link class="navbar-item nav-link" to="about">
+            <font-awesome-icon
+              :icon="['fas', 'info-circle']"
+              class="icon alt ml-2"
+            />
+          </router-link>
           <button
             v-if="user"
             class="nav-item nav-link btn btn-link"
