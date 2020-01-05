@@ -10,6 +10,7 @@
       :user="user"
       :lights="lights"
       @log-out="logout"
+      @sendSettings="sendSettings"
     />
   </div>
 </template>
@@ -36,6 +37,9 @@ export default {
           this.user = null;
           this.$router.push("login");
         });
+    },
+    sendSettings: function(settings) {
+      this.console.log("Sender settings: ", settings);
     }
   },
   mounted() {

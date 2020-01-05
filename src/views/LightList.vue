@@ -11,29 +11,15 @@
             v-for="light in lights"
             :key="light.id"
           >
-            <section
-              class="btn-group align-self-center"
-              role="group"
-              aria-label="Light Options"
+            <router-link
+              class="btn btn-sm btn-outline-secondary"
+              title="Light control"
+              :to="'/lights/' + light.id"
             >
-              <router-link
-                class="btn btn-sm btn-outline-secondary"
-                title="Check In"
-              >
-                link
-              </router-link>
-
-              <router-link
-                class="btn btn-sm btn-outline-secondary"
-                title="Attendees"
-              >
-                list-ul
-              </router-link>
-            </section>
-
-            <section class="pl-3 text-left align-self-center">
-              {{ light.name }}
-            </section>
+              <section class="pl-3 text-left align-self-center">
+                {{ light.name }}
+              </section>
+            </router-link>
           </div>
         </div>
       </div>

@@ -26,8 +26,8 @@ const routes = [
     component: LightList
   },
   {
-    path: "/light",
-    name: "light",
+    path: "/lights/:lightId",
+    name: "lightControl",
     component: LightControl
   },
   {
